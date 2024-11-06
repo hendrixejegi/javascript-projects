@@ -1,0 +1,35 @@
+/* Color variables */
+:root {
+  --NAVY-COLOR: #132436;
+  --BLUE-COLOR: #9c90fc;
+  --ORANGE-COLOR: #e05a29;
+  --OFF-WHITE-COLOR: #f2ecec;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-app {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
