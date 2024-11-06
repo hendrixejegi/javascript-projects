@@ -28,8 +28,8 @@ body {
 
 .todo-app {
   margin: 0 auto;
-  max-width: 800px;
   overflow: hidden;
+  max-width: 800px;
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -37,11 +37,13 @@ body {
 
 /* UI header */
 .ui-header {
+  z-index: 40;
   padding: 20px;
-  color: var(--OFF-WHITE-COLOR);
-  border-bottom-right-radius: 15px;
+  position: relative;
+  color: var(--NAVY-COLOR);
   border-bottom-left-radius: 15px;
-  background-color: var(--BLUE-COLOR);
+  border-bottom-right-radius: 15px;
+  background-color: var(--OFF-WHITE-COLOR);
 }
 
 .quote-of-day {
@@ -72,4 +74,77 @@ body {
 .progress-bar label {
   font-weight: 600;
   align-self: flex-end;
+}
+
+/* UI body */
+.ui-body {
+  z-index: 1;
+  display: flex;
+  position: relative;
+  margin-top: -100px;
+  padding: 120px 20px 20px;
+  flex-flow: column nowrap;
+  color: var(--OFF-WHITE-COLOR);
+  background-color: var(--NAVY-COLOR);
+}
+
+.input-container {
+  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 100px 50px;
+}
+
+.input-container * {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.input-container input,
+.input-container button,
+.delete-button {
+  border: none;
+  outline: none;
+  padding: 0 8px;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--OFF-WHITE-COLOR);
+  font-family: "Nunito", sans-serif;
+}
+
+.input-container input {
+  line-height: 1.5rem;
+  border-bottom: 1px solid var(--OFF-WHITE-COLOR);
+}
+
+.input-container ::placeholder {
+  color: var(--OFF-WHITE-COLOR);
+}
+
+.delete-button {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+.todo {
+  width: 100%;
+  gap: 0.75rem;
+  display: grid;
+  align-items: start;
+  margin-bottom: 12px;
+  flex-flow: row nowrap;
+  grid-template-columns: auto 1fr auto;
+}
+
+.todo input {
+  margin-top: 4px;
+}
+
+.todo p:first-child {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.todo .date {
+  font-size: 0.65rem;
+  line-height: 1.5rem;
 }
