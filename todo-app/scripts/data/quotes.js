@@ -1,4 +1,4 @@
-const quotes = [
+export const quotes = [
   {
     quote:
       "I do not know anyone who has got to the top without hard work. That is the recipe.",
