@@ -30,9 +30,13 @@ body {
   margin: 0 auto;
   overflow: hidden;
   max-width: 800px;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  cursor: pointer;
 }
 
 /* UI header */
@@ -44,6 +48,11 @@ body {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: var(--OFF-WHITE-COLOR);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.daily-quote-container {
+  margin-bottom: 12px;
 }
 
 .quote-of-day {
@@ -67,7 +76,6 @@ body {
 .progress-bar progress {
   width: 100%;
   height: 20px;
-  margin-bottom: 8px;
   accent-color: var(--ORANGE-COLOR);
 }
 
@@ -82,8 +90,8 @@ body {
   display: flex;
   position: relative;
   margin-top: -100px;
-  padding: 120px 20px 20px;
   flex-flow: column nowrap;
+  padding: 120px 20px 20px;
   color: var(--OFF-WHITE-COLOR);
   background-color: var(--NAVY-COLOR);
 }
@@ -91,27 +99,24 @@ body {
 .input-container {
   gap: 16px;
   display: grid;
-  grid-template-columns: 1fr 100px 50px;
+  grid-template-columns: 1fr auto auto;
 }
 
-.input-container * {
-  height: 40px;
-  margin-bottom: 20px;
-}
-
+.clear-button,
 .input-container input,
-.input-container button,
-.delete-button {
+.input-container button {
+  height: 40px;
   border: none;
   outline: none;
-  padding: 0 8px;
-  font-size: 1rem;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
   background: transparent;
   color: var(--OFF-WHITE-COLOR);
   font-family: "Nunito", sans-serif;
 }
 
 .input-container input {
+  padding: 0 8px;
   line-height: 1.5rem;
   border-bottom: 1px solid var(--OFF-WHITE-COLOR);
 }
@@ -120,9 +125,26 @@ body {
   color: var(--OFF-WHITE-COLOR);
 }
 
-.delete-button {
+input[type="date"] {
+  background-repeat: no-repeat;
+  background-position: 96% center;
+  background-image: url("../images/calendar-icon.png");
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.add-button,
+.clear-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-button {
   align-self: flex-end;
-  margin-bottom: 20px;
 }
 
 .todo {
@@ -147,4 +169,26 @@ body {
 .todo .date {
   font-size: 0.65rem;
   line-height: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    margin: 0;
+    height: 100%; /* Takes up the full height of the viewport */
+    overflow: auto;
+  }
+
+  .todo-app {
+    display: flex;
+    border-radius: 0;
+    min-height: 100vh; /* Ensures it fills the viewport */
+    flex-direction: column;
+  }
+
+  .todo-app-ui {
+    flex-grow: 1;
+    display: grid;
+    grid-template-rows: auto;
+  }
 }

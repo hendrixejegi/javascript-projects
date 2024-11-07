@@ -11,8 +11,13 @@
       href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
       rel="stylesheet"
     />
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- Style sheets -->
-    <link rel="stylesheet" href="./Styles/style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
     <main class="todo-app">
@@ -42,12 +47,23 @@
         <div class="ui-body">
           <!-- Input -->
           <div class="input-container">
-            <input class="app-input" placeholder="enter task..." />
+            <input class="app-input" placeholder="Add task..." />
             <input type="date" />
-            <button>Add</button>
+            <!-- <input
+              placeholder="date"
+              type="text"
+              onfocus="this.type='date'"
+              onblur="this.type='text'"
+            /> -->
+
+            <button class="add-button">
+              <i class="bx bx-plus-circle bx-sm"></i>
+            </button>
           </div>
           <!-- Delete button -->
-          <button class="delete-button">Delete</button>
+          <button class="clear-button">
+            <i class="bx bx-trash bx-sm"></i>
+          </button>
           <!-- Todo list -->
           <div class="todo-list-container">
             <!-- todo -->
@@ -57,7 +73,6 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
                 repellat.
               </p>
-              <p></p>
             </div>
             <!-- todo -->
             <div class="todo">
