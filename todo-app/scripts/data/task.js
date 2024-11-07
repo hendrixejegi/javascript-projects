@@ -1,4 +1,10 @@
 class Task {
+  #localStorageKey;
+
+  constructor(key) {
+    this.#localStorageKey = key;
+  }
+
   "task-list" = [
     {
       task: "clean room",
@@ -49,7 +55,15 @@ class Task {
     taskInputElem.value = "";
     dateInputElem.value = "";
     this.renderTaskList();
+    this.saveToStorage();
+  }
+
+  saveToStorage() {
+    localStorage.setItem(
+      this.#localStorageKey,
+      JSON.stringify(this["task-list"])
+    );
   }
 }
 
-export const task = new Task();
+export const task = new Task("task-list");
