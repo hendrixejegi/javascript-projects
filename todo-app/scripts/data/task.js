@@ -13,15 +13,15 @@ class Task {
     ) || [
       {
         task: "clean room",
-        "due-date": "10-11-2024",
+        ["due-date"]: "10-11-2024",
       },
       {
         task: "implement features in todo app",
-        "due-date": "10-11-2024",
+        ["due-date"]: "10-11-2024",
       },
       {
         task: "chill and watch a movie",
-        dueDate: "",
+        ["due-date"]: "",
       },
     ];
   }
@@ -42,17 +42,14 @@ class Task {
       `;
     });
 
-    document.querySelector(".js-todo-list-container").innerHTML = taskListHTML;
+    return taskListHTML;
   }
 
   checkDate(item) {
     return item["due-date"] ? `<p class="date">${item["due-date"]}</p>` : "";
   }
 
-  addTask() {
-    const taskInputElem = document.querySelector(".js-task-input");
-    const dateInputElem = document.querySelector(".js-date-input");
-
+  addTask(taskInputElem, dateInputElem) {
     this["task-list"].push({
       task: taskInputElem.value,
       "due-date": dateInputElem.value,
@@ -69,6 +66,11 @@ class Task {
       this.#localStorageKey,
       JSON.stringify(this["task-list"])
     );
+  }
+
+  clearTasks() {
+    this["task-list"] = [];
+    localStorage.removeItem(this.#localStorageKey);
   }
 }
 
