@@ -23,6 +23,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
   background-color: #d3d3d3;
 }
 
@@ -31,7 +32,7 @@ body {
   overflow: hidden;
   max-width: 800px;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: var(--NAVY-COLOR);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -41,9 +42,9 @@ button {
 
 /* UI header */
 .ui-header {
-  z-index: 40;
   padding: 20px;
-  position: relative;
+  overflow: hidden;
+  height: fit-content;
   color: var(--NAVY-COLOR);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -86,14 +87,10 @@ button {
 
 /* UI body */
 .ui-body {
-  z-index: 1;
   display: flex;
-  position: relative;
-  margin-top: -100px;
+  padding: 20px;
   flex-flow: column nowrap;
-  padding: 120px 20px 20px;
   color: var(--OFF-WHITE-COLOR);
-  background-color: var(--NAVY-COLOR);
 }
 
 .input-container {
@@ -187,7 +184,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   }
 
   .todo-app-ui {
-    flex-grow: 1;
     display: grid;
     grid-template-rows: auto;
   }
