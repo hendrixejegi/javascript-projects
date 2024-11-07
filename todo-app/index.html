@@ -38,16 +38,9 @@
         <div class="ui-body">
           <!-- Input -->
           <div class="input-container">
-            <input class="app-input" placeholder="Add task..." />
-            <input type="date" />
-            <!-- <input
-              placeholder="date"
-              type="text"
-              onfocus="this.type='date'"
-              onblur="this.type='text'"
-            /> -->
-
-            <button class="add-button">
+            <input class="task-input js-task-input" placeholder="Add task..." />
+            <input type="date" class="js-date-input" />
+            <button class="add-button js-add-button">
               <i class="bx bx-plus-circle bx-sm"></i>
             </button>
           </div>
@@ -56,54 +49,12 @@
             <i class="bx bx-trash bx-sm"></i>
           </button>
           <!-- Todo list -->
-          <div class="todo-list-container">
-            <!-- todo -->
-            <div class="todo">
-              <input type="checkbox" name="" id="" />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-                repellat.
-              </p>
-            </div>
-            <!-- todo -->
-            <div class="todo">
-              <input type="checkbox" />
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi,
-                molestiae?
-              </p>
-              <p class="date">10/11/2024</p>
-            </div>
-            <!-- todo -->
-            <div class="todo">
-              <input type="checkbox" />
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi,
-                molestiae?
-              </p>
-              <p class="date">10/11/2024</p>
-            </div>
-            <!-- todo -->
-            <div class="todo">
-              <input type="checkbox" name="" id="" />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut,
-                repellat.
-              </p>
-            </div>
-            <div class="todo">
-              <input type="checkbox" />
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi,
-                molestiae?
-              </p>
-              <p class="date">10/11/2024</p>
-            </div>
-          </div>
+          <div class="todo-list-container js-todo-list-container"></div>
         </div>
       </div>
     </main>
     <!-- Scripts -->
     <script type="module" src="scripts/daily-quote.js"></script>
+    <script src="scripts/task.js"></script>
   </body>
 </html>
