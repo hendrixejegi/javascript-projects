@@ -2,11 +2,11 @@ class Task {
   "task-list" = [
     {
       task: "clean room",
-      "due-date": "10/11/2024",
+      "due-date": "10-11-2024",
     },
     {
       task: "implement features in todo app",
-      "due-date": "10/11/2024",
+      "due-date": "10-11-2024",
     },
     {
       task: "chill and watch a movie",
@@ -36,17 +36,20 @@ class Task {
   checkDate(item) {
     return item["due-date"] ? `<p class="date">${item["due-date"]}</p>` : "";
   }
+
+  addTask() {
+    const taskInputElem = document.querySelector(".js-task-input");
+    const dateInputElem = document.querySelector(".js-date-input");
+
+    this["task-list"].push({
+      task: taskInputElem.value,
+      "due-date": dateInputElem.value,
+    });
+
+    taskInputElem.value = "";
+    dateInputElem.value = "";
+    this.renderTaskList();
+  }
 }
 
-const task = new Task();
-task.renderTaskList();
-
-// const taskInputElem = document.querySelector(".js-task-input");
-// const dateInputElem = document.querySelector(".js-date-input");
-// const addBtn = document.querySelector(".js-add-button");
-
-// addBtn.addEventListener("click", () => {
-//   const task = taskInputElem.value;
-//   const dueDate = dateInputElem.value;
-
-// });
+export const task = new Task();
