@@ -8,28 +8,8 @@ class Task {
   }
 
   #loadFromStorage() {
-    this["task-list"] = JSON.parse(
-      localStorage.getItem(this.#localStorageKey)
-    ) || [
-      {
-        id: "1",
-        task: "clean room",
-        ["due-date"]: "10-11-2024",
-        done: true,
-      },
-      {
-        id: "2",
-        task: "implement features in todo app",
-        ["due-date"]: "10-11-2024",
-        done: false,
-      },
-      {
-        id: "3",
-        task: "chill and watch a movie",
-        ["due-date"]: "",
-        done: false,
-      },
-    ];
+    this["task-list"] =
+      JSON.parse(localStorage.getItem(this.#localStorageKey)) || [];
   }
 
   renderTaskList() {
