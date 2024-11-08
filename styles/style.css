@@ -100,7 +100,7 @@ button {
 .input-container {
   gap: 16px;
   display: grid;
-  grid-template-columns: 1fr 100px auto;
+  grid-template-columns: 1fr minmax(auto, 100px) auto;
 }
 
 .clear-button,

@@ -23,14 +23,34 @@ export function renderBody() {
       });
   }
 
-  todoListContainer.innerHTML = task.renderTaskList();
-  updateCheckboxListeners();
-
-  addBtn.addEventListener("click", () => {
+  function addTask() {
     task.addTask(taskInputElem, dateInputElem);
     todoListContainer.innerHTML = task.renderTaskList();
     updateCheckboxListeners();
     renderProgressBar();
+  }
+
+  todoListContainer.innerHTML = task.renderTaskList();
+  updateCheckboxListeners();
+
+  addBtn.addEventListener("click", () => {
+    addTask();
+  });
+
+  taskInputElem.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      if (!taskInputElem.value) {
+        taskInputElem.blur();
+      } else {
+        dateInputElem.focus();
+
+        dateInputElem.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            addTask();
+          }
+        });
+      }
+    }
   });
 
   clearBtn.addEventListener("click", () => {
